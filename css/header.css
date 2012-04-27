@@ -1,0 +1,266 @@
+/**
+ * Header Styles
+ */
+ 
+#header
+{
+	position:relative;
+	min-height:120px;
+	margin-bottom:.75em;
+}
+
+#name-and-slogan
+{
+	margin-right:250px; /* Leave a gutter for #secondary and #search */
+	margin-bottom:.75em;
+  height: 68px;
+}
+
+#logo
+{
+	float:left;
+	margin-right:10px;
+}
+
+#site-name
+{
+	font-size:4em; 
+	line-height:1.25em;
+	padding:0;
+  margin:.25em 0 3px;
+  font-family:'UCBerkeleyOSRegular', Helevetica, sans-serif;
+  letter-spacing:0.002em;
+}
+
+#site-name a
+{
+  color:#C68E31;
+  text-decoration: none;
+}
+
+#site-name-description
+{
+  font-size: .3em;
+  text-transform: uppercase;
+  letter-spacing:0.125em;
+  line-height: 0;
+}
+
+#site-name-description a 
+{
+  color:#002c76;
+  text-decoration: none;
+}
+
+#header .site-name-image-wrapper
+{
+	margin:0;
+}
+
+#menu-and-search
+{
+	border:1px solid #333333;
+	background:url(../images/header-default.jpg) no-repeat left top;
+	height:121px;
+}
+
+body.front #menu-and-search
+{
+	height:260px;
+	background:url(../images/header-large.jpg);
+}
+
+/**
+ * Main menu styles
+ */
+#primary
+{
+	position:absolute;
+	bottom:0;
+	left:0;
+	z-index:3;
+	width:100%;
+	padding:7px 0;
+	margin:0;
+	font-weight:bold;
+	text-shadow:1px 1px 1px #000000;
+	filter:dropshadow(color=#000000,offx=1,offy=1);
+/* Background opacity isn't easy to implement
+   * @see http://robertnyman.com/2010/01/11/css-background-transparency-without-affecting-child-elements-through-rgba-and-filters/
+  **/
+/* Fallback for web browsers that doesn't support RGBa */
+	background:rgb(0,0,0) transparent;
+/* RGBa with 0.6 opacity */
+	background:rgba(0,0,0,0.4);
+/* For IE 5.5 - 7*/
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
+/* For IE 8*/
+	-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, endColorstr=#66000000)";
+}
+
+#primary li
+{
+	display:inline;
+	list-style-type:none;
+}
+
+#primary a
+{
+	padding:0 15px;
+	color:#fff;
+	text-decoration:none;
+	border-right:1px solid #A69F91;
+}
+
+#primary a:hover
+{
+	text-decoration:underline;
+}
+
+/**
+ * Secondary menu styles
+ */
+#secondary
+{
+	position:absolute;
+	right:0;
+	top:0;
+	font-weight:bold;
+	padding:3px 10px;
+	margin:49px 0 0;
+}
+
+#secondary li
+{
+	display:inline;
+	list-style-type:none;
+	margin-right:15px;
+}
+
+#secondary li.last
+{
+	margin-right:0;
+}
+
+#secondary a
+{
+	color:#999;
+	text-decoration:none;
+}
+
+#secondary a:hover
+{
+	text-decoration:underline;
+}
+
+/**
+ * Search styles
+ */
+#search
+{
+	position:absolute;
+	right:0;
+	bottom:0;
+	z-index:4;
+	margin:0 5px 5px 0;
+}
+
+#search #search-form
+{
+	margin-bottom:0;
+}
+
+#search .form-item-keys
+{
+	margin:0;
+}
+
+#search input.form-text,#search input.form-submit
+{
+	width:172px;
+	border:1px solid #000;
+	padding:.5em .25em .25em;
+	background:#fff;
+	font-size:.857em; /* 14 -> 12px */
+	border-color:#888;
+	-moz-box-shadow:inset 1px 1px 3px #888;
+	-webkit-box-shadow:inset 1px 1px 3px #888;
+	box-shadow:inset 1px 1px 3px #888;
+}
+
+#search input.form-text
+{
+	padding-left:25px;
+	width:155px;
+	background:#fff url(../images/icon-search.png) no-repeat 5px 3px;
+}
+
+#search input.form-submit
+{
+	padding-left:.5em;
+	padding-right:.5em;
+	width:auto;
+	cursor:pointer;
+}
+
+/*
+   * A bug in FireFox causes submit buttons to be 2px taller than an input
+   * text field with the same properities. Sadly, there is no good solution to
+   * this issue, but this is a hacky fix that solves the problem
+   * @see http://christophzillgens.com/en/articles/equal-height-input-and-button-elements-in-firefox-and-safari
+   */
+@-moz-document url-prefix()
+{
+	#searchinputform-submitborder:0;
+}	
+}
+
+/**
+ * Research Spotlight 
+ */
+#front-header
+{
+	width:225px;
+	height:100%;
+	float:right;
+	color:#fff;
+	font-size:.923em; /* 13 -> 12px */
+	position:relative;
+/* Background opacity isn't easy to implement
+   * @see http://robertnyman.com/2010/01/11/css-background-transparency-without-affecting-child-elements-through-rgba-and-filters/
+  **/
+/* Fallback for web browsers that doesn't support RGBa */
+	background:rgb(0,0,0) transparent;
+/* RGBa with 0.6 opacity */
+	background:rgba(0,0,0,0.4);
+/* For IE 5.5 - 7*/
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
+/* For IE 8*/
+	-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, endColorstr=#66000000)";
+}
+
+#front-header-inner
+{
+	position:absolute;
+	bottom:20px;
+	padding:20px;
+}
+
+#front-header h3
+{
+	margin:0 0 .65em;
+}
+
+#front-header a
+{
+	color:#C58C31;
+	font-weight:bold;
+	font-style:italic;
+	text-decoration:underline;
+	font-family:Arial, Helvetica, "Nimbus Sans L", sans-serif;
+}
+
+#front-header a:hover
+{
+	text-decoration:none;
+}

@@ -1,0 +1,170 @@
+/** 
+ * Footer Styles
+ */
+ 
+#footer-content
+{
+	background:#BAAB82;
+	padding:7px 10px;
+	border:1px solid #827555;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	margin-bottom:1em;
+}
+
+#social-profile-links
+{
+	float:left;
+}
+
+#social-profile-links h3
+{
+	margin:0 0 .5em;
+	font-size:.923em; /* 13 -> 12px */
+}
+
+#social-profile-links .item-list ul,#social-media-buttons .item-list ul
+{
+	margin:0;
+	float:left;
+}
+
+#social-profile-links .item-list ul li,#social-media-buttons .item-list ul li
+{
+	list-style-type:none;
+	margin:0 2px;
+	float:left;
+}
+
+#social-media-buttons .item-list ul li
+{
+	margin:0;
+}
+
+#social-profile-links .item-list ul li.first,#social-media-buttons .item-list ul li.first
+{
+	margin-left:0;
+}
+
+#social-profile-links .item-list a
+{
+	display:block;
+	height:28px;
+	width:27px;
+	text-indent:-99999em;
+	overflow:hidden;
+	background:url(../images/social-media-icons.png);
+}
+
+#social-profile-links .item-list span
+{
+	display:block;
+}
+
+span.social-profile-wrapper-facebook a
+{
+	background:left top;
+}
+
+span.social-profile-wrapper-google a
+{
+	background:-31px top;
+}
+
+span.social-profile-wrapper-twitter a
+{
+	background:-62px top;
+}
+
+span.social-profile-wrapper-linkedin a
+{
+	background:-93px top;
+}
+
+span.social-profile-wrapper-youtube a
+{
+	background:-124px top;
+}
+
+span.social-profile-wrapper-foursquare a
+{
+	background:-155px top;
+}
+
+span.social-profile-wrapper-digg a
+{
+	background:-186px top;
+}
+
+span.social-profile-wrapper-delicious a
+{
+	background:-217px top;
+}
+
+span.social-profile-wrapper-flickr a
+{
+	background:-248px top;
+}
+
+#menu-and-social
+{
+	float:right;
+}
+
+ul#footer-menu
+{
+	float:right;
+	padding:0;
+	margin:0 0 .75em;
+	font-size:.923em; /* 13 -> 12px */
+	font-weight:bold;
+}
+
+ul#footer-menu li
+{
+	list-style-type:none;
+	float:left;
+	padding:0 7px;
+}
+
+ul#footer-menu a
+{
+	text-decoration:none;
+	color:#333;
+}
+
+ul#footer-menu a:hover,ul#footer-menu a:active
+{
+	text-decoration:underline;
+}
+
+#footer-seal
+{
+	float:left;
+}
+
+#footer-university-name,#footer-copyright
+{
+	font-size:.846em; /* 13->11px; */
+	margin-top:16px;
+}
+
+#footer-university-name
+{
+	margin-left:1em;
+	text-transform:uppercase;
+	letter-spacing:.05em;
+	float:left;
+  font-family: 'UCBerkeleyOSRegular', Helevetica, sans-serif;
+}
+
+#footer-university-name a
+{
+	color:#333;
+	text-decoration:none;
+}
+
+#footer-copyright
+{
+	float:right;
+}

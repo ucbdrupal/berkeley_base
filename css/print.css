@@ -1,0 +1,36 @@
+/**
+ * Print Styles
+ */
+ 
+*
+{
+	background:transparent
+}
+
+.sidebar,#navigation,#header-region,#search-theme-form,#footer,.breadcrumb,.tabs,.feed-icon,.links
+{
+	display:none
+}
+
+#page
+{
+	width:100%
+}
+
+#content,#content #content-inner,.content,.title
+{
+	width:auto;
+	margin:20px 0
+}
+
+a:hover,a:active,a:link,a:visited
+{
+	color:black
+}
+
+#content a:link:after,#content a:visited:after
+{
+	content:" (" attr(href) ") ";
+	font-size:.8em;
+	font-weight:normal
+}

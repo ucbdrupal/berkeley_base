@@ -1,0 +1,805 @@
+/**
+ * Base Styles
+ */
+ 
+body
+{
+	padding:0;
+	margin:0;
+	background:#FFF;
+}
+
+#site-container
+{
+	background:#B0B0B0;
+}
+
+#site-container-inner
+{
+	background:#FFF;
+}
+
+/* "Skip to Main Content" link
+ * ---------------------------
+ * This link useful for both visually impaired people and those with mobility impairments
+ * who cannot use a mouse. http://www.webaim.org/techniques/css/invisiblecontent/ */
+#skip a:link,#skip a:hover,#skip a:visited
+{
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+#skip a:active,#skip a:focus
+{
+	position:static;
+	width:auto;
+	height:auto;
+}
+
+/* Layout
+ * ------
+**/
+#page
+{
+	width:940px;
+	margin:0 auto;
+}
+
+/* Layout Helpers */
+#header,#footer,.mission,.breadcrumb,.node
+{
+	clear:both;
+}
+
+/* Nodes. */
+.node-unpublished /* Unpublished nodes */
+{
+/* background-color: #fff4f4; */
+/* Drupal core uses a #fff4f4 background */
+}
+
+.node-unpublished div.unpublished,.comment-unpublished div.unpublished /* The word Unpublished displayed underneath the content. */
+{
+	height:0;
+	overflow:visible;
+	color:#d8d8d8;
+	font-size:75px;
+	line-height:1;
+	font-family:Impact, "Arial Narrow", Helvetica, sans-serif;
+	font-weight:bold;
+	text-transform:uppercase;
+	text-align:center;
+	word-wrap:break-word;
+/* A very nice CSS3 property */
+}
+
+/**
+ * Misc. styles
+ */
+.hide-title
+{
+/* Hides the header's site-name, if the var $display_title is set
+  to FALSE */
+	text-indent:-99999em;
+	overflow:hidden;
+}
+
+/* UI improvments. */
+#system-themes-form img
+{
+	width:100px;
+}
+
+.pager li a.active
+{
+	text-decoration:none;
+	color:#184697;
+}
+
+.pager li a.active:hover,.pager li a.active:active
+{
+	text-decoration:underline;
+}
+
+/* Console, style from slate theme. */
+div.messages
+{
+	padding:9px;
+	margin:1em 0;
+	color:#003366;
+	background:#bbddff;
+	border:1px solid #aaccee;
+}
+
+div.warning
+{
+	color:#884400;
+	background:#ffee66;
+	border-color:#eedd55;
+}
+
+div.error
+{
+	color:white;
+	background:#ee6633;
+	border-color:#dd5522;
+}
+
+div.status
+{
+	color:#336600;
+	background:#ccff88;
+	border-color:#bbee77;
+}
+
+/**
+ * Fieldsets.
+ *
+ * Fieldset legends are displayed like containers in Seven. However, several
+ * browsers do not support styling of LEGEND elements. To achieve the desired
+ * styling:
+ * - All fieldsets use 'position: relative'.
+ * - All legend labels are wrapped in a single span.fieldset-legend that uses
+ *   'position: absolute', which means that the LEGEND element itself is not
+ *   rendered by browsers.
+ * - Due to using 'position: absolute', collapsed fieldsets do not have a
+ *   height; the fieldset requires a 'padding-top' to make the absolute
+ *   positioned .fieldset-legend appear as though it would have a height.
+ * - Various browsers are positioning the legend differently if there is a
+ *   'padding-left'/'padding-right' applied on a fieldset and inherit the
+ *   positioning even to absolute positioned elements within; we therefore have
+ *   to apply all padding to the inner .fieldset-wrapper instead.
+ */
+fieldset
+{
+	border:1px solid #ccc;
+	padding:2.5em 0 0;
+/* LTR */
+	position:relative;
+	margin:1em 0;
+	border:1px solid #EDEDEE;
+	background:#EDEDEE;
+}
+
+legend
+{
+	border:0 none;
+	margin:0;
+	padding:0;
+	vertical-align:baseline;
+}
+
+fieldset .fieldset-legend
+{
+	margin-top:.5em;
+	padding-left:15px; /* LTR */
+	position:absolute;
+	font-size:1.154em; /* 13 -> 15px */
+	font-family:Helvetica, sans-serif;
+}
+
+html.js fieldset.collapsible .fieldset-legend
+{
+	background:url(../images/menu-expanded.png) no-repeat scroll 10px 65% transparent;
+	padding-left:35px;
+}
+
+html.js fieldset.collapsed .fieldset-legend
+{
+	background:url(../images/menu-collapsed.png);
+	background:10px 50%;
+}
+
+fieldset .fieldset-legend a
+{
+	text-decoration:none;
+}
+
+fieldset .fieldset-wrapper
+{
+	padding:13px 13px 13px 15px;
+/* LTR */
+	background:#FFF;
+}
+
+html.js fieldset.collapsed
+{
+	border-width:1px;
+	height:auto;
+}
+
+fieldset fieldset
+{
+	background:#fff;
+}
+
+fieldset fieldset fieldset
+{
+	background:#f8f8f8;
+}
+
+/**
+ * General + Misc. styles
+ */
+/**
+ * Login Form
+ */
+form#user-login input.form-text
+{
+	font-size:2em;
+}
+
+form#user-login .form-type-textfield,form#user-login .form-type-password
+{
+	text-align:left;
+	margin-bottom:2em;
+}
+
+form#user-login .form-type-textfield label,form#user-login .form-type-password label
+{
+	float:left;
+	width:110px;
+	padding-right:10px;
+	margin-top:7px;
+	font-size:1.25em;
+}
+
+form#user-login .form-type-textfield input,form#user-login .form-type-textfield .description,form#user-login .form-type-password input,form#user-login .form-type-password .description
+{
+	width:500px;
+}
+
+form#user-login .form-type-textfield .description,form#user-login .form-type-password .description
+{
+	margin-left:120px;
+}
+
+form#user-login input.form-submit
+{
+	background:#184697;
+	border:0;
+	font-size:1.5em;
+	color:#fff;
+	padding:5px 20px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	margin-left:120px;
+	margin-bottom:1em;
+}
+
+/**
+ * Node styles
+ */
+.node
+{
+	clear:both;
+}
+
+/**
+ * Node teaser style
+ */
+.node-teaser .content h2
+{
+	margin-top:0;
+	margin-bottom:0;
+}
+
+.node-teaser .content-title
+{
+	margin-bottom:1em;
+}
+
+.node-featured
+{
+	background:#EBF2FC;
+	border:1px solid black;
+}
+
+.node-featured .image
+{
+	float:left;
+	width:33%;
+}
+
+.node-featured .content
+{
+	float:right;
+	width:66%;
+}
+
+.node-featured .content .content-inner
+{
+	padding-left:1em;
+	padding-right:1em;
+	padding-top:.5em;
+	padding-bottom:.5em;
+}
+
+.node-featured .content .content-inner h2
+{
+	margin-top:0;
+	margin-bottom:0;
+}
+
+.node-featured .content-title
+{
+	margin-bottom:1em;
+}
+
+.node-featured .phelan-container
+{
+	margin-bottom:0;
+}
+
+.node-featured .pane-title
+{
+	margin-top:1em;
+}
+
+/**
+ * Breadcrumb
+ */
+.breadcrumb
+{
+	font-style:italic;
+	font-size:.923em; /* 13->12px */
+	border-bottom:2px solid #687E9B;
+}
+
+.breadcrumb a
+{
+	text-decoration:none;
+}
+
+.breadcrumb a:hover,.breadcrumb a:active
+{
+	text-decoration:underline;
+}
+
+/**
+ * People Table Style
+ */
+.view-display-id-people_grid img
+{
+	width:150px;
+}
+
+.view-display-id-people_grid td
+{
+	vertical-align:top;
+	text-align:center;
+	width:25%;
+}
+
+/**
+ * Panopoly Images
+ */
+.panopoly-image-half
+{
+	float:left;
+	margin-right:1em;
+}
+
+.panopoly-image-quarter
+{
+	float:left;
+	margin-right:.75em;
+	margin-top:.5em;
+}
+
+/**
+ * Tabs Styles
+ */
+.tabs
+{
+	clear:both;
+	width:100%;
+	margin:5px 0;
+}
+
+.tabs ul.primary,.tabs ul.secondary
+{
+	padding:0;
+	margin:0;
+	margin-bottom:0;
+	border-bottom:#DADADA solid 1px;
+	width:100%;
+	font-size:.87em;
+}
+
+.tabs ul.primary li
+{
+	margin-left:0;
+}
+
+.tabs ul.primary li a
+{
+	background:#F7F7F7;
+	line-height:2em;
+	float:left;
+	position:relative;
+	bottom:-1px;
+	border-style:solid;
+	border-color:#DADADA;
+	font-weight:bold;
+	padding:0 25px;
+	text-align:center;
+}
+
+.tabs ul.primary li a.active
+{
+	background:#FFF;
+	border-color:#DADADA #DADADA #FFFFFF;
+}
+
+.tabs ul.primary li a:hover
+{
+	background:#FFF;
+	border-color:#DADADA #DADADA #FFFFFF;
+}
+
+.tabs ul.primary li.active a:hover
+{
+	background:transparent;
+}
+
+.tabs ul.secondary
+{
+	margin-left:0;
+	margin:0;
+	padding:.5em 0;
+}
+
+/**
+ * View Styles
+ */
+.views-row
+{
+	margin-bottom:1em;
+}
+
+.views-row-last
+{
+	padding-bottom:0;
+}
+
+/*
+ * Fonts
+ *
+ * Our font size and line height declarations are based on the following
+ * articles:
+ * - http://www.alistapart.com/articles/howtosizetextincss
+ * - http://24ways.org/2006/compose-to-a-vertical-rhythm
+ *
+ * All modern browsers use a 16px default font size. Specifying the font-size
+ * and line-height in ems (relative to the 16px default font) allows the user
+ * to resize the font in the browser and produces the most consistent results
+ * across different browsers.
+ */
+body
+{
+	font-size:100%;
+/* Fixes exaggerated text resizing in IE6 and IE7 */
+}
+
+#skip-link,#page
+{
+/* Use a 13px base font size with a 18px line height */
+	font-size:.8125em;
+/* 16px x .8125 = 13px */
+	line-height:1.385em;
+/* 14px x 1.385 = 18px */
+	color:#333;
+}
+
+/*
+ * UCB Identity Font
+ */
+
+@font-face 
+{
+    font-family: 'UCBerkeleyOSRegular';
+    src: url('http://identity.berkeley.edu/lib/fonts/uc_berkeley_os-webfont.eot');
+    src: url('http://identity.berkeley.edu/lib/fonts/uc_berkeley_os-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://identity.berkeley.edu/lib/fonts/uc_berkeley_os-webfont.woff') format('woff'),
+         url('http://identity.berkeley.edu/lib/fonts/uc_berkeley_os-webfont.ttf') format('truetype'),
+         url('http://identity.berkeley.edu/lib/fonts/uc_berkeley_os-webfont.svg#UCBerkeleyOSRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*/
+body,caption,th,td,input,textarea,select,option,legend,fieldset
+{
+  font-family:Helvetica, Arial, "Nimbus Sans L", sans-serif;
+}
+
+pre,code,kbd,samp,tt,var
+{
+	font-family:"Courier New", "DejaVu Sans Mono", monospace;
+}
+
+/*
+ * Block-level elements
+ *
+ * To achieve a pleasant vertical rhythm, we use the 1.5em line height of our
+ * base font as the top and bottom margins for our block level elements and make
+ * the line heights of any larger fonts be a multiple of 1.5 ems. For more
+ * information, see http://24ways.org/2006/compose-to-a-vertical-rhythm
+ */
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,ul,ol,dl,hr,table,fieldset
+{
+	margin:1.5em 0;
+}
+
+/* Override Sytem Module's Top Border Line */
+tbody
+{
+	border-top:0;
+}
+
+.ctools-dropdown-container hr
+{
+	margin:0;
+}
+
+blockquote
+{
+	border:0;
+	margin-left:2em;
+	padding-left:1em;
+	color:#666;
+	font-style:italic;
+	font-size:1.154em; /* 13 -> 15px */
+}
+
+/* Headings */
+h1,h2,h3
+{
+	line-height:normal;
+}
+
+h1
+{
+	font-weight:normal;
+	font-size:2.462em; /* 13 -> 32px */
+	line-height:1.5em;
+	margin:.609em 0;
+/* 0.609em is equivalent to 1.5em in the page's base font. Remember, a
+     margin specified in ems is relative to the element's font-size, not to the
+     pages' base font size. So, for example, if we want a 1.5em margin (relative
+     to the base font), we have to divide that length by the element's
+     font-size:  1.5em / 2.462em = 0.609em  */
+}
+
+h2
+{
+	font-size:1.846em; /* 13 -> 24px */
+	margin:.813em 0; /* Equivalent to 1.5em in the page's base font: 1.5 / 1.846 = .813em */
+}
+
+h3
+{
+	font-size:1.385em; /* 13 -> 18px */
+	margin:1.083em 0; /* Equivalent to 1.5em in the page's base font: 1.5 / 1.385 = 1.083 */
+}
+
+h4,h5,h6
+{
+	font-size:1.231em; /* 13 -> 16px */
+	margin:1.219em 0; /* Equivalent to 1.5em in the page's base font: 1.5 / 1.231 = 1.219 */
+}
+
+h1.title,h1.pane-title,h2.title,h2.pane-title,h3.title,h3.pane-title,h4.title,h4.pane-title,h5.title,h5.pane-title,h6.title,h6.pane-title
+{
+/* We want to remove the top margin on system titles
+  because they are almost always at the top of a pane/region, and that margin
+  often creates unwanted white space */
+	margin-top:0;
+}
+
+/* Links */
+a
+{
+	color:#184697;
+	text-decoration:underline;
+}
+
+a:hover,a:active
+{
+	color:#2164D6;
+	text-decoration:none;
+}
+
+h1 a:link,h1 a:visited,h2 a:link,h2 a:visited,h3 a:link,h3 a:visited,h4 a:link,h4 a:visited,h5 a:link,h5 a:visited,h6 a:link,h6 a:visited
+{
+	text-decoration:none;
+}
+
+h1 a:hover,h1 a:active,h2 a:hover,h2 a:active,h3 a:hover,h3 a:active,h4 a:hover,h4 a:active,h5 a:hover,h5 a:active,h6 a:hover,h6 a:active
+{
+	text-decoration:underline;
+}
+
+/* Paragraph styles. */
+p
+{
+	margin:0 0 1em;
+}
+
+/* List styles. */
+ul,ol
+{
+	margin-left:0;
+	padding-left:2em;
+}
+
+ul
+{
+	list-style-type:disc;
+}
+
+ul ul
+{
+	list-style-type:circle;
+}
+
+ul ul ul
+{
+	list-style-type:square;
+}
+
+ul ul ul ul
+{
+	list-style-type:circle;
+}
+
+ol
+{
+	list-style-type:decimal;
+}
+
+ol ol
+{
+	list-style-type:lower-alpha;
+}
+
+ol ol ol
+{
+	list-style-type:decimal;
+}
+
+/* Table styles. */
+table
+{
+	width:99%;
+}
+
+table a:link,table a:visited
+{
+	color:#184697;
+	text-decoration:none;
+}
+
+table a:hover,table a:active
+{
+	text-decoration:underline;
+}
+
+/**
+ * method for making the table border a different color than cell borders
+ * @see http://stackoverflow.com/questions/5875931/using-css-to-make-tables-outer-border-color-different-from-cells-border-color
+ */
+table
+{
+	border:1px solid #000;
+}
+
+tr
+{
+	border-top:1px solid #000;
+}
+
+tr + tr
+{
+	border-top:1px solid #E9E9E9;
+}
+
+th
+{
+	border-bottom:1px solid #E9E9E9;
+}
+
+td,th
+{
+	border-left:1px solid #000;
+}
+
+td + td,th + th
+{
+	border-left:1px solid #E9E9E9;
+}
+
+thead
+{
+	background:#C8AF84;
+}
+
+th
+{
+	padding:6px 15px 8px;
+	font-size:1.385em; /* 13->16 */
+	font-weight:normal;
+}
+
+tr.even,tr.odd
+{
+	border-bottom:none;
+}
+
+tr.even td,tr.odd td
+{
+	padding:10px 15px;
+	color:#666;
+}
+
+tr.odd
+{
+	background:#F6F6F6;
+}
+
+tr.even
+{
+	background:#FBFBFB;
+}
+
+/* Code. */
+pre
+{
+	background:#fff;
+	display:block;
+	padding:1em 2em;
+	margin:1em 1.75em;
+	border:1px solid #FFCD00;
+	border-width:1px 10px;
+	white-space:pre-wrap;
+}
+
+/* Abbreviation. */
+abbr,acronym
+{
+	border-bottom:1px dotted #666666;
+	cursor:help;
+}
+
+/* Forms. */
+form
+{
+	margin:0;
+	padding:0;
+}
+
+input.form-text
+{
+	border:1px solid #A2B8CC;
+	padding:3px 5px;
+}
+
+span.form-required
+{
+	color:#E0C068;
+}
+
+/* Other inline elements. */
+img
+{
+	border:0;
+	vertical-align:bottom;
+/* Suppress the space beneath the baseline */
+	max-width:100%;
+	height:auto;
+}

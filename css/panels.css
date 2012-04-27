@@ -1,0 +1,54 @@
+/**
+ * @file
+ * Panels styling
+ *
+ * This file is excusively used for styling panel layouts and panes as they
+ * appear in regions at large.  It should not be used for styling the content
+ * within a panel pane
+ */
+ 
+/** Default Panel Pane Style **/
+.panel-pane h2.pane-title
+{
+	font-size:1.385em; /* 13 -> 18px */
+	color:#184897;
+	border-bottom:5px solid #697E9A;
+	padding:5px 0;
+}
+
+/** Berkeley Blue Panel Pane Style **/
+.pane-berkeley-blue h2.pane-title
+{
+	background:#697E9A;
+	font-size:1.385em; /* 13 -> 18px */
+	padding:5px 10px;
+	color:#FFF;
+	border:1px solid #827555;
+	-moz-border-radius:3px;
+	border-radius:3px;
+}
+
+/** Berkeley Gold Panel Pane Style **/
+.pane-berkeley-gold h2.pane-title
+{
+	background:#BAAB82;
+	font-size:1.385em; /* 13 -> 18px */
+	padding:5px 10px;
+	color:#000;
+	border:1px solid #827555;
+	-moz-border-radius:3px;
+	border-radius:3px;
+}
+
+/** Berkeley Blue Background Callout Panel Pane Style **/
+.pane-background-callout
+{
+	background:#EBF2FC;
+	padding:1em;
+}
+
+.region-background-callout
+{
+	background:#EBF2FC;
+	padding:1em;
+}
