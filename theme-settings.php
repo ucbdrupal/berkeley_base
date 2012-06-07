@@ -15,8 +15,38 @@ function berkeley_base_form_system_theme_settings_alter(&$form, $form_state) {
 
   // Remove the standard logo
   $form['logo']['default_logo']['#access'] = FALSE;
+  
+  // 'logo_path', 'logo_upload' keys need to be defined so that ucb open academy install won't complain.
+  $form['logo']['settings']['logo_path'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Path to custom logo'),
+      '#description' => t('The path to the file you would like to use as your logo file instead of the default logo.'),
+      '#default_value' => theme_get_setting('logo_path', 'berkeley_base'),
+    );
+  $form['logo']['settings']['logo_upload'] = array(
+      '#type' => 'file',
+      '#title' => t('Upload logo image'),
+      '#maxlength' => 40,
+      '#description' => t("If you don't have direct file access to the server, use this field to upload your logo.")
+    );
+  // Hide the logo settings section
   $form['logo']['settings']['#access'] = FALSE;
 
+
+  // favicon array keys need to be defined so that ucb open academy install won't complain.
+  $form['favicon']['settings']['favicon_path'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Path to custom icon'),
+      '#description' => t('The path to the image file you would like to use as your custom shortcut icon.'),
+      '#default_value' => theme_get_setting('favicon_path', 'berkeley_base'),
+    );
+  $form['favicon']['settings']['favicon_upload'] = array(
+      '#type' => 'file',
+      '#title' => t('Upload icon image'),
+      '#description' => t("If you don't have direct file access to the server, use this field to upload your shortcut icon.")
+    );
+
+  
   // Define the university information fieldset
   $form['university_info'] = array(
     '#type' => 'fieldset',
@@ -131,7 +161,8 @@ function berkeley_base_form_system_theme_settings_alter(&$form, $form_state) {
       '#description' => 'If you don\'t have direct file access to the server, use this field to upload your seal.',
     ),
   );
-
+  
+  
   $form['#submit'][] = 'berkeley_base_theme_settings_submit';
   $form['#validate'][] = 'berkeley_base_theme_settings_validate';
 }
@@ -165,6 +196,12 @@ function berkeley_base_theme_settings_validate($form, &$form_state) {
       form_set_error('seal_path', t('The custom seal path is invalid.'));
     }
   }
+  
+  //install profile will complain if logo_path is not in the form
+  if (!isset($form['logo_path'])) {
+    $form['logo_path'] = '';
+  } 
+
 }
 
 /**
